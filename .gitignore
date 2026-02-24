@@ -1,0 +1,12 @@
+# Database
+students.db
+
+# Virtual Environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# PyCharm settings
+.idea/
