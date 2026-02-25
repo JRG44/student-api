@@ -10,7 +10,7 @@ A REST API for managing student records built with FastAPI and SQLite.
 2. Create and activate a virtual environment:
     ```
     python -m venv venv
-    venv\Scripts\activate
+    source venv\bin\activate
     ```
 3. Install dependencies:
     ```
@@ -60,3 +60,52 @@ student-api/
 ├── routes.py        # API route handlers
 ├── requirements.txt # Dependencies
 └── README.md        # Documentation
+```
+---
+
+## Example Usage
+
+### 1. Create a new student (POST)
+```
+POST http://localhost:8000/students
+Content-Type: application/json
+
+{
+  "name": "Joey Grottola",
+  "email": "jgrottola@mocs.flsouthern.edu",
+  "major": "Computer Science",
+  "gpa": 4.0,
+  "enrollment_year": 2024
+}
+```
+
+### 2. Get a student by ID (GET)
+```
+GET http://localhost:8000/students/1
+```
+
+Expected response:
+```json
+{
+  "id": 1,
+  "name": "Joey Grottola",
+  "email": "jgrottola@mocs.flsouthern.edu",
+  "major": "Computer Science",
+  "gpa": 4.0,
+  "enrollment_year": 2024
+}
+```
+
+### 3. Filter students by GPA (GET)
+```
+GET http://localhost:8000/students/by-gpa?min_gpa=4.0
+```
+
+Expected response:
+```json
+{
+  "students": [...],
+  "count": 1,
+  "min_gpa": 4.0
+}
+```
