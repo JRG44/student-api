@@ -10,7 +10,7 @@ A REST API for managing student records built with FastAPI and SQLite.
 2. Create and activate a virtual environment:
     ```
     python -m venv venv
-    source venv\bin\activate
+    source venv/bin/activate
     ```
 3. Install dependencies:
     ```
